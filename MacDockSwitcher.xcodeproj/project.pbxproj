@@ -8,61 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		578B5643290159C900A821BF /* MacDockSwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B5642290159C900A821BF /* MacDockSwitcherApp.swift */; };
-		578B5645290159C900A821BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B5644290159C900A821BF /* ContentView.swift */; };
 		578B5647290159CA00A821BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 578B5646290159CA00A821BF /* Assets.xcassets */; };
 		578B564A290159CA00A821BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 578B5649290159CA00A821BF /* Preview Assets.xcassets */; };
-		578B5655290159CB00A821BF /* MacDockSwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B5654290159CB00A821BF /* MacDockSwitcherTests.swift */; };
-		578B565F290159CB00A821BF /* MacDockSwitcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B565E290159CB00A821BF /* MacDockSwitcherUITests.swift */; };
-		578B5661290159CB00A821BF /* MacDockSwitcherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B5660290159CB00A821BF /* MacDockSwitcherUITestsLaunchTests.swift */; };
+		D0B629B743133F06C62C3C61 /* SceneSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B625A05FF69CE4588AFDA4 /* SceneSwitcher.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		578B5651290159CB00A821BF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 578B5637290159C900A821BF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 578B563E290159C900A821BF;
-			remoteInfo = MacDockSwitcher;
-		};
-		578B565B290159CB00A821BF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 578B5637290159C900A821BF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 578B563E290159C900A821BF;
-			remoteInfo = MacDockSwitcher;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		578B563F290159C900A821BF /* MacDockSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacDockSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		578B5642290159C900A821BF /* MacDockSwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDockSwitcherApp.swift; sourceTree = "<group>"; };
-		578B5644290159C900A821BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		578B5646290159CA00A821BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		578B5649290159CA00A821BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		578B564B290159CA00A821BF /* MacDockSwitcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacDockSwitcher.entitlements; sourceTree = "<group>"; };
-		578B5650290159CB00A821BF /* MacDockSwitcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacDockSwitcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		578B5654290159CB00A821BF /* MacDockSwitcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDockSwitcherTests.swift; sourceTree = "<group>"; };
-		578B565A290159CB00A821BF /* MacDockSwitcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacDockSwitcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		578B565E290159CB00A821BF /* MacDockSwitcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDockSwitcherUITests.swift; sourceTree = "<group>"; };
-		578B5660290159CB00A821BF /* MacDockSwitcherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDockSwitcherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D0B625A05FF69CE4588AFDA4 /* SceneSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneSwitcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		578B563C290159C900A821BF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		578B564D290159CB00A821BF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		578B5657290159CB00A821BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,8 +37,6 @@
 			isa = PBXGroup;
 			children = (
 				578B5641290159C900A821BF /* MacDockSwitcher */,
-				578B5653290159CB00A821BF /* MacDockSwitcherTests */,
-				578B565D290159CB00A821BF /* MacDockSwitcherUITests */,
 				578B5640290159C900A821BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,8 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				578B563F290159C900A821BF /* MacDockSwitcher.app */,
-				578B5650290159CB00A821BF /* MacDockSwitcherTests.xctest */,
-				578B565A290159CB00A821BF /* MacDockSwitcherUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,10 +53,10 @@
 			isa = PBXGroup;
 			children = (
 				578B5642290159C900A821BF /* MacDockSwitcherApp.swift */,
-				578B5644290159C900A821BF /* ContentView.swift */,
 				578B5646290159CA00A821BF /* Assets.xcassets */,
 				578B564B290159CA00A821BF /* MacDockSwitcher.entitlements */,
 				578B5648290159CA00A821BF /* Preview Content */,
+				D0B625A05FF69CE4588AFDA4 /* SceneSwitcher.swift */,
 			);
 			path = MacDockSwitcher;
 			sourceTree = "<group>";
@@ -110,23 +67,6 @@
 				578B5649290159CA00A821BF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		578B5653290159CB00A821BF /* MacDockSwitcherTests */ = {
-			isa = PBXGroup;
-			children = (
-				578B5654290159CB00A821BF /* MacDockSwitcherTests.swift */,
-			);
-			path = MacDockSwitcherTests;
-			sourceTree = "<group>";
-		};
-		578B565D290159CB00A821BF /* MacDockSwitcherUITests */ = {
-			isa = PBXGroup;
-			children = (
-				578B565E290159CB00A821BF /* MacDockSwitcherUITests.swift */,
-				578B5660290159CB00A821BF /* MacDockSwitcherUITestsLaunchTests.swift */,
-			);
-			path = MacDockSwitcherUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,42 +89,6 @@
 			productReference = 578B563F290159C900A821BF /* MacDockSwitcher.app */;
 			productType = "com.apple.product-type.application";
 		};
-		578B564F290159CB00A821BF /* MacDockSwitcherTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 578B5667290159CB00A821BF /* Build configuration list for PBXNativeTarget "MacDockSwitcherTests" */;
-			buildPhases = (
-				578B564C290159CB00A821BF /* Sources */,
-				578B564D290159CB00A821BF /* Frameworks */,
-				578B564E290159CB00A821BF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				578B5652290159CB00A821BF /* PBXTargetDependency */,
-			);
-			name = MacDockSwitcherTests;
-			productName = MacDockSwitcherTests;
-			productReference = 578B5650290159CB00A821BF /* MacDockSwitcherTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		578B5659290159CB00A821BF /* MacDockSwitcherUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 578B566A290159CB00A821BF /* Build configuration list for PBXNativeTarget "MacDockSwitcherUITests" */;
-			buildPhases = (
-				578B5656290159CB00A821BF /* Sources */,
-				578B5657290159CB00A821BF /* Frameworks */,
-				578B5658290159CB00A821BF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				578B565C290159CB00A821BF /* PBXTargetDependency */,
-			);
-			name = MacDockSwitcherUITests;
-			productName = MacDockSwitcherUITests;
-			productReference = 578B565A290159CB00A821BF /* MacDockSwitcherUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,14 +101,6 @@
 				TargetAttributes = {
 					578B563E290159C900A821BF = {
 						CreatedOnToolsVersion = 14.0.1;
-					};
-					578B564F290159CB00A821BF = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = 578B563E290159C900A821BF;
-					};
-					578B5659290159CB00A821BF = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = 578B563E290159C900A821BF;
 					};
 				};
 			};
@@ -222,8 +118,6 @@
 			projectRoot = "";
 			targets = (
 				578B563E290159C900A821BF /* MacDockSwitcher */,
-				578B564F290159CB00A821BF /* MacDockSwitcherTests */,
-				578B5659290159CB00A821BF /* MacDockSwitcherUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -238,20 +132,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		578B564E290159CB00A821BF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		578B5658290159CB00A821BF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,42 +139,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				578B5645290159C900A821BF /* ContentView.swift in Sources */,
 				578B5643290159C900A821BF /* MacDockSwitcherApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		578B564C290159CB00A821BF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				578B5655290159CB00A821BF /* MacDockSwitcherTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		578B5656290159CB00A821BF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				578B5661290159CB00A821BF /* MacDockSwitcherUITestsLaunchTests.swift in Sources */,
-				578B565F290159CB00A821BF /* MacDockSwitcherUITests.swift in Sources */,
+				D0B629B743133F06C62C3C61 /* SceneSwitcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		578B5652290159CB00A821BF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 578B563E290159C900A821BF /* MacDockSwitcher */;
-			targetProxy = 578B5651290159CB00A821BF /* PBXContainerItemProxy */;
-		};
-		578B565C290159CB00A821BF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 578B563E290159C900A821BF /* MacDockSwitcher */;
-			targetProxy = 578B565B290159CB00A821BF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		578B5662290159CB00A821BF /* Debug */ = {
@@ -347,7 +197,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -401,7 +251,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -424,6 +274,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,6 +302,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,78 +313,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		578B5668290159CB00A821BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 994UG8Z7F2;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hausermedia.MacDockSwitcherTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacDockSwitcher.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacDockSwitcher";
-			};
-			name = Debug;
-		};
-		578B5669290159CB00A821BF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 994UG8Z7F2;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hausermedia.MacDockSwitcherTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacDockSwitcher.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacDockSwitcher";
-			};
-			name = Release;
-		};
-		578B566B290159CB00A821BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 994UG8Z7F2;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hausermedia.MacDockSwitcherUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MacDockSwitcher;
-			};
-			name = Debug;
-		};
-		578B566C290159CB00A821BF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 994UG8Z7F2;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hausermedia.MacDockSwitcherUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MacDockSwitcher;
 			};
 			name = Release;
 		};
@@ -553,24 +333,6 @@
 			buildConfigurations = (
 				578B5665290159CB00A821BF /* Debug */,
 				578B5666290159CB00A821BF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		578B5667290159CB00A821BF /* Build configuration list for PBXNativeTarget "MacDockSwitcherTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				578B5668290159CB00A821BF /* Debug */,
-				578B5669290159CB00A821BF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		578B566A290159CB00A821BF /* Build configuration list for PBXNativeTarget "MacDockSwitcherUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				578B566B290159CB00A821BF /* Debug */,
-				578B566C290159CB00A821BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
