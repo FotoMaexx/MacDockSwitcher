@@ -7,6 +7,6 @@ MacDockSwitcher is a Programm to switch between multiple Docks for multiple Purp
 It's working on macOS 13.0+
 
 Planed Features:
-- [ ] https://github.com/FotoMaexx/MacDockSwitcher/issues/8
-- [ ] https://github.com/FotoMaexx/MacDockSwitcher/issues/2
-- [ ] https://github.com/FotoMaexx/MacDockSwitcher/issues/4
+- [ ] [Editable Dock Names](https://github.com/FotoMaexx/MacDockSwitcher/issues/8)
+- [ ] [Create new Docks](https://github.com/FotoMaexx/MacDockSwitcher/issues/2)
+- [ ] [Import and Export Docks](https://github.com/FotoMaexx/MacDockSwitcher/issues/4)
