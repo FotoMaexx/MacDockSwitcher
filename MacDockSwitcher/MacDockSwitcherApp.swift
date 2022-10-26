@@ -24,7 +24,8 @@ struct MacDockSwitcherApp: App {
                 switchScene(from: currentNumber, to: 1)
                 currentNumber = 1
             }
-                    .keyboardShortcut("1")
+            .keyboardShortcut("1")
+
 
 
             Button("Uni") {
@@ -41,7 +42,7 @@ struct MacDockSwitcherApp: App {
             Divider()
 
             Button("Quit") {
-
+                switchScene(from: currentNumber, to: 1)
                 NSApplication.shared.terminate(nil)
 
             }
