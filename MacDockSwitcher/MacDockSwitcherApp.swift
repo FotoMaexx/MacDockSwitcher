@@ -11,50 +11,50 @@ import SwiftUI
 
 @main
 struct MacDockSwitcherApp: App {
-
+    
     init() {
         initialize()
     }
-
+    
+    var dockPresets: [Int : String] = [1 : "Normal", 2 : "Study", 3 : "Work", 4 : "Rest"]
+    
     @AppStorage("currentNumber") var currentNumber: Int = 1
-    @AppStorage("quitToRevert") var quitToRevert: Bool = false
-    @AppStorage("safetyWait") var safetyWait: Bool = true
+    @AppStorage("quitToRevert") var applyNormalDockOnQuit: Bool = false
+    @AppStorage("safetyWait") var applyWithWaitingPeriod: Bool = true
     
+    @State var numberToApply: Int?
     @State var waitingToChange = false
-    
     @State var startDate = Date.now
     @State var timeElapsed: Double = 0.0
-    
     @State var timer = Timer.publish(every: 0.25, on: .main, in: .common).autoconnect()
-
+    
     var body: some Scene {
         MenuBarExtra(isInserted: .constant(true)) {
-            ForEach([1 : "Normal", 2 : "Study", 3 : "Work", 4 : "Rest"].sorted(by: <),  id: \.key) { key, value in
+            ForEach(dockPresets.sorted(by: <),  id: \.key) { key, value in
                 Button {
-                    if currentNumber != key {
-                        setDock(key)
-                    }
+                    setDock(key)
                 } label: {
                     HStack {
-                        Image(systemName: key == currentNumber ? "\(key).circle.fill" : "\(key).circle")
-                            .symbolRenderingMode(.hierarchical)
+                        Image(systemName: "\(key).circle\(key == currentNumber && !waitingToChange ? ".fill" : "")")
                         Text(value)
                     }
-//                    Label(value, image: key == currentNumber ? "checkmark" : "\(key).circle")
                 }
                 .keyboardShortcut(.init(.init("\(key)")))
                 .disabled(waitingToChange)
             }
+            if waitingToChange, let key = numberToApply, let value = dockPresets[key] {
+                Text("Applying '\(value)'…")
+            }
             
             Divider()
             
-            Toggle("Apply Slow and Stable", isOn: $safetyWait)
-            Toggle("Apply 'Normal' on Quit", isOn: $quitToRevert)
+            Toggle("Apply Slow and Stable", isOn: $applyWithWaitingPeriod)
+            Toggle("Apply 'Normal' on Quit", isOn: $applyNormalDockOnQuit)
             
             Divider()
-
+            
             Button("Quit") {
-                if quitToRevert && currentNumber != 1  {
+                if applyNormalDockOnQuit  {
                     setDock(1) {result in
                         NSApplication.shared.terminate(nil)
                     }
@@ -62,30 +62,45 @@ struct MacDockSwitcherApp: App {
                     NSApplication.shared.terminate(nil)
                 }
             }
-                    .keyboardShortcut("q")
-                    .disabled(waitingToChange)
+            .keyboardShortcut("q")
+            .disabled(waitingToChange)
         } label: {
             Image(systemName: waitingToChange ? "rays" : "\(currentNumber).circle", variableValue: timeElapsed/5.0)
+                .onAppear {
+                    stopChangeTimer()
+                }
                 .onReceive(timer) { firedDate in
-                    print("timer fired")
                     timeElapsed = firedDate.timeIntervalSince(startDate)
                 }
         }
     }
-        
+    
     func setDock(_ dockNumber: Int, completion:  ((Bool) -> Void)? = nil)  {
-        
+        guard dockPresets.keys.contains(dockNumber) && currentNumber != dockNumber else {
+            return
+        }
+        numberToApply = dockNumber
+        startChangeTimer()
+        DispatchQueue.main.asyncAfter(deadline: .now() + (applyWithWaitingPeriod ? 5.0 : 0.1)) {
+            if let numberToApply = numberToApply {
+                switchScene(from: currentNumber, to: numberToApply)
+                currentNumber = numberToApply
+            }
+            stopChangeTimer()
+            completion?(true)
+        }
+    }
+    
+    func startChangeTimer() {
         startDate = Date.now
         timeElapsed = 0.0
         waitingToChange = true
         timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
-        DispatchQueue.main.asyncAfter(deadline: .now() + (safetyWait ? 5.0 : 0.1)) {
-            switchScene(from: currentNumber, to: dockNumber)
-            currentNumber = dockNumber
-            waitingToChange = false
-            timer.upstream.connect().cancel()
-            completion?(true)
-        }
+    }
+    
+    func stopChangeTimer() {
+        waitingToChange = false
+        timer.upstream.connect().cancel()
     }
 }
 
