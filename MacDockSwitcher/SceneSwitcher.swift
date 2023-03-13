@@ -13,7 +13,7 @@ extension FileManager {
             return nil
         }
 
-        let bundleID = Bundle.main.bundleIdentifier ?? "com.example"
+        let bundleID = Bundle.main.bundleIdentifier ?? "hausermedia.MacDockSwitcher"
         let appDirectory = appSupportURL.appendingPathComponent(bundleID)
         let subdirectoryNames = ["1", "2", "3"]
 
