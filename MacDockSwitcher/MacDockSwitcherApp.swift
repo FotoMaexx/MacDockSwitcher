@@ -12,10 +12,6 @@ import SwiftUI
 @main
 struct MacDockSwitcherApp: App {
     
-    init() {
-        initialize()
-    }
-    
     var dockPresets: [Int : String] = [1 : "Normal", 2 : "Study", 3 : "Work", 4 : "Rest"]
     
     @AppStorage("currentNumber") var currentNumber: Int = 1
@@ -83,7 +79,7 @@ struct MacDockSwitcherApp: App {
         startChangeTimer()
         DispatchQueue.main.asyncAfter(deadline: .now() + (applyWithWaitingPeriod ? 5.0 : 0.1)) {
             if let numberToApply = numberToApply {
-                switchScene(from: currentNumber, to: numberToApply)
+                switchDockConfiguration(from: currentNumber, to: numberToApply)
                 currentNumber = numberToApply
             }
             stopChangeTimer()
@@ -101,28 +97,5 @@ struct MacDockSwitcherApp: App {
     func stopChangeTimer() {
         waitingToChange = false
         timer.upstream.connect().cancel()
-    }
-}
-
-func initialize() {
-    // Check if Folder exists, otherwise create it
-    let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-    let documentsDirectory = paths[0]
-    let docURL = URL(string: documentsDirectory)!
-    let dataPath = docURL.appendingPathComponent("HauserMedia/DockSwitcher/Docks")
-    if !FileManager.default.fileExists(atPath: dataPath.path) {
-        do {
-            try FileManager.default.createDirectory(atPath: dataPath.path, withIntermediateDirectories: true, attributes: nil)
-        } catch {
-            print(error.localizedDescription)
-        }
-        for index in 1...3 {
-            do {
-                let dockPath = dataPath.appendingPathComponent("\(index)")
-                try FileManager.default.createDirectory(atPath: dockPath.path, withIntermediateDirectories: true, attributes: nil)
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
     }
 }
