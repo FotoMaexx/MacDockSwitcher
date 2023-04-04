@@ -3,7 +3,6 @@
 //
 
 import Foundation
-import os.log
 
 extension FileManager {
     // Returns the URL of the application support directory for the main bundle, creating it if necessary
@@ -24,7 +23,7 @@ extension FileManager {
                 try fileManager.createDirectory(at: appDirectory.appendingPathComponent(subdirectoryName), withIntermediateDirectories: true, attributes: [:])
             }
         } catch {
-            os_log("Error creating directory: %@", log: .default, type: .error, "\(error.localizedDescription)")
+            print("Error creating directory: \(error.localizedDescription)")
             return nil
         }
 
@@ -65,7 +64,7 @@ func killDock() {
 
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
     if let output = String(data: data, encoding: .utf8) {
-        os_log("Dock killed: %@", log: .default, type: .debug, output)
+        print("Dock killed: %@")
     }
 }
 
@@ -73,7 +72,7 @@ func killDock() {
 func switchDockConfiguration(from oldConfiguration: Int, to newConfiguration: Int) {
     do {
         guard let appSupportDirectory = FileManager.applicationSupportDirectory, let dockPlistURL = FileManager.appleDockPlistURL else {
-            os_log("Could not locate necessary directories.", log: .default, type: .error)
+            print("Could not locate necessary directories.")
             return
         }
         
@@ -88,7 +87,7 @@ func switchDockConfiguration(from oldConfiguration: Int, to newConfiguration: In
         
         killDock()
     } catch {
-        os_log("Error switching Dock configuration: %@", log: .default, type: .error, "\(error.localizedDescription)")
+        print("Error switching Dock configuration: \(error.localizedDescription)")
     }
 }
 
